@@ -14,7 +14,10 @@ import {V0_FEED_MODELS, V0_USER_MODELS} from './controllers/v0/model.index';
   await sequelize.addModels(V0_USER_MODELS);
 
   console.debug("Initialize database connection...");
+  console.debug(config);
   await sequelize.sync();
+  console.debug(typeof(process.env.POSTGRES_PASSWORD));
+  console.debug("success")
 
   const app = express();
   const port = process.env.PORT || 8080;
