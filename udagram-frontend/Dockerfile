@@ -5,10 +5,10 @@ WORKDIR /usr/src/app
 # Installer les dépendances de l'application
 # Un joker est utilisé pour s'assurer que package.json ET package-lock.json sont copiés.
 COPY package*.json ./
-RUN npm ci --legacy-peer-deps
+RUN npm ci
 # Regroupement des sources de l'application
 COPY . .
-RUN export NODE_OPTIONS=--openssl-legacy-provider && ionic build
+RUN ionic build
 ## Exécuter
 FROM nginx:alpine
 #COPY www /usr/share/nginx/html
