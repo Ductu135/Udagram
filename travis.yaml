@@ -14,14 +14,14 @@ script:
   - docker build -t reverseproxy ./reverseproxy
 
   # Tag Docker images
-  - docker tag udagram-api-feed Udagram/udagram-api-feed
-  - docker tag udagram-api-user Udagram/udagram-api-user
-  - docker tag udagram-frontend Udagram/udagram-frontend:local
-  - docker tag reverseproxy Udagram/reverseproxy
+  - docker tag udagram-api-feed ductu1305/udagram-api-feed
+  - docker tag udagram-api-user ductu1305/udagram-api-user
+  - docker tag udagram-frontend ductu1305/udagram-frontend:local
+  - docker tag reverseproxy ductu1305/reverseproxy
 
 after_success:
   # Push Docker images to DockerHub
-  - docker push Udagram/udagram-api-feed
-  - docker push Udagram/udagram-api-user
-  - docker push Udagram/udagram-frontend:local
-  - docker push Udagram/reverseproxy
+  - docker push ductu1305/udagram-api-feed
+  - docker push ductu1305/udagram-api-user
+  - docker push ductu1305/udagram-frontend:local
+  - docker push ductu1305/reverseproxy
