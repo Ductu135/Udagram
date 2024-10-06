@@ -16,7 +16,7 @@ spec:
         api: external
     spec:
       containers:
-        - image: ductu1305/udagram-frontend
+        - image: ductu1305/udagram-frontend:local
           name: udagram-frontend
           imagePullPolicy: Always
           ports:
