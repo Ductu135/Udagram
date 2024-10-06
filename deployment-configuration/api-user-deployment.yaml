@@ -2,21 +2,21 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    run: udagram-api-user
-  name: udagram-api-user
+    run: api-user
+  name: api-user
 spec:
   replicas: 3
   selector:
     matchLabels:
-      run: udagram-api-user
+      run: api-user
   template:
     metadata:
       labels:
-        run: udagram-api-user
+        run: api-user
     spec:
       containers:
       - image: ductu1305/udagram-api-user
-        name: udagram-api-user
+        name: api-user
         imagePullPolicy: Always  
         resources:
           requests:
