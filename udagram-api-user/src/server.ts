@@ -12,9 +12,10 @@ import {V0_USER_MODELS} from './controllers/v0/model.index';
 (async () => {
   await sequelize.addModels(V0_USER_MODELS);
 
+  console.log('database: '+ config.database);
+  console.log('host: '+ config.host);
   console.debug("Initialize database connection...");
   await sequelize.sync();
-  console.debug(typeof(process.env.POSTGRES_PASSWORD));
 
   const app = express();
   const port = process.env.PORT || 8080;

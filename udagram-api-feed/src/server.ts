@@ -12,13 +12,15 @@ import {V0_FEED_MODELS} from './controllers/v0/model.index';
 (async () => {
   await sequelize.addModels(V0_FEED_MODELS);
 
+  console.log('database: '+ config.database);
+  console.log('host: '+ config.host);
+  console.log('username: '+ config.username);
+  console.log('password: '+ config.password);
   console.debug("Initialize database connection...");
   await sequelize.sync();
-  console.debug(typeof(process.env.POSTGRES_PASSWORD));
 
   const app = express();
   const port = process.env.PORT || 8080;
-  console.log(port);
 
   app.use(bodyParser.json());
 
